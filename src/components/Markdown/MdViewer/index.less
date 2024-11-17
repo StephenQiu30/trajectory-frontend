@@ -1,67 +1,74 @@
-.md-viewer {
-  max-width: 100%;
+/* 明亮模式样式调整 */
+.md-editor {
+  --md-bk-color: #f7f8fa; /* 背景颜色 */
+  --md-border-color: #d9d9d9; /* 边框颜色 */
+  --md-hover-color: #333; /* 悬停文字颜色 */
+  --md-color: #222; /* 默认文字颜色 */
+  --md-scrollbar-bg-color: #eaeaea; /* 滚动条背景色 */
+  --md-scrollbar-thumb-color: #c1c1c1; /* 滚动条滑块颜色 */
+  --md-border-active-color: #8c8c8c; /* 激活状态的边框颜色 */
+}
+
+/* 暗夜模式样式调整 */
+.md-editor-dark {
+  --md-bk-color: #282c34 !important; /* 背景颜色 */
+  --md-color: #e8e8e8; /* 默认文字颜色 */
+  --md-hover-color: #ffffff; /* 悬停文字颜色 */
+  --md-border-color: #444; /* 边框颜色 */
+  --md-scrollbar-bg-color: #1c1e22; /* 滚动条背景色 */
+  --md-scrollbar-thumb-color: #444; /* 滚动条滑块颜色 */
+}
+
+/* 工具栏样式调整 */
+.md-editor-toolbar {
+  --md-bk-color: #fff; /* 工具栏背景颜色 */
+  font-size: 18px; /* 增大工具栏文字大小 */
+  padding: 10px 16px; /* 增大内边距 */
+}
+
+.md-editor-toolbar button {
+  font-size: 32px; /* 按钮字体大小 */
+  padding: 8px 12px; /* 按钮内边距 */
+  border-radius: 6px; /* 圆角按钮 */
+  transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+.md-editor-toolbar button:hover {
+  background-color: var(--md-hover-color); /* 悬停背景颜色 */
+  color: var(--md-bk-color-outstand); /* 突出背景颜色 */
+}
+
+/* 编辑器滚动条调整 */
+.md-editor {
+  scrollbar-width: thin;
+  scrollbar-color: var(--md-scrollbar-thumb-color) var(--md-scrollbar-bg-color);
+}
+
+.md-editor::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.md-editor::-webkit-scrollbar-thumb {
+  background-color: var(--md-scrollbar-thumb-color);
+  border-radius: 4px;
+}
+
+/* 针对工具栏图标的样式调整 */
+.md-editor-toolbar-item svg.md-editor-icon {
+  width: 24px !important; /* 调整图标宽度 */
+  height: 24px !important; /* 调整图标高度 */
+  padding: 4px !important; /* 内边距 */
+  fill: none;
   overflow: hidden;
-  margin: 0 auto;
+  display: block;
 }
 
-.md-viewer img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* 修改复制代码栏处的样式 */
-.md-viewer .markdown-body pre {
-  position: relative;
-  overflow: auto;
-  line-height: 1.75;
-  padding-top: 3em;
-}
-
-.code-block-extension-header {
-  display: flex;
-  user-select: none;
-  height: 28px;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 3px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  font-size: 1em;
-  background-color: rgb(248, 248, 248);
-  padding: 0.5em 1em;
-}
-
-.code-block-extension-header.code-block-extension-fold {
-  box-shadow: none;
-  margin-bottom: 0;
-}
-
-.code-block-extension-headerLeft {
-  display: flex;
-  align-items: center;
-}
-
-.code-block-extension-headerLeft > .code-block-extension-foldBtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 10px;
-  height: 10px;
-  color: #707070; /* 初始颜色 */
-  margin-right: 8px;
-}
-
-.code-block-extension-headerLeft > .code-block-extension-foldBtn:hover {
-  cursor: pointer;
-  color: #1890ff; /* 悬停时变为蓝色 */
-}
-
-.code-block-extension-headerLeft > .code-block-extension-foldBtn.code-block-extension-fold {
-  transform: rotate(-90deg);
-}
-
-pre > code.code-block-extension-fold {
-  display: none !important;
+/* 调整无序列表、有序列表和待办事项图标的大小 */
+.md-editor .lucide-list,
+.md-editor .lucide-list-ordered,
+.md-editor .lucide-list-todo {
+  width: 24px; /* 增加图标宽度 */
+  height: 24px; /* 增加图标高度 */
+  padding: 4px; /* 增加内边距，确保图标更清晰 */
 }
