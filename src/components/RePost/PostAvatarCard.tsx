@@ -24,7 +24,6 @@ const PostAvatarCard: React.FC<Props> = (props) => {
         valueRender: () => (
           <Typography.Text
             style={{
-              fontWeight: 500,
               color: 'rgba(0, 0, 0, 0.45)',
             }}
           >
