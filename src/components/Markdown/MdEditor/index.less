@@ -1,0 +1,22 @@
+/* 通过 :where 选择器定位特定的类 */
+:where(.css-dev-only-do-not-override-1ayddhh) .ant-image .ant-image-mask {
+  /* 设置图片的最大宽度和最大高度 */
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* 桌面端样式 */
+:where(.css-dev-only-do-not-override-1ayddhh) .ant-image .ant-image-img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* 移动端样式 */
+@media (max-width: 768px) {
+  :where(.css-dev-only-do-not-override-1ayddhh) .ant-image .ant-image-img {
+    max-width: 90%;
+    max-height: 300px;
+  }
+}
